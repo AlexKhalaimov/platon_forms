@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Platon form</title>
+</head>
+<body>
+    <form action="#" class="cardForm" id="creditCardForm">
+        <p class="cardForm__title">Введите данные карты</p>
+        <div class="cardForm__container">
+            <label for='checkbox-1' class="cardForm__label cardForm__label_toggler">
+                <span class="cardForm__labelText">Сохранить карту</span>
+                <input type='checkbox' class="cardForm__input" id='checkbox-1'>
+                <i></i>
+            </label>
+            <label for="cardNuber" class="cardForm__label">
+                <span class="cardForm__labelText cardForm__labelText_sm">Номер карты</span>
+                <input type="number" id="cardNumber">
+            </label>
+            <label for="cardExpires" class="cardForm__label">
+                <span class="cardForm__labelText cardForm__labelText_sm">Срок действия карты</span>
+                <input type="number" id="cardExpires">
+            </label>
+            <label for="cardCvv" class="cardForm__label">
+                <span class="cardForm__labelText cardForm__labelText_sm">CVV2</span>
+                <input type="number" id="cardCvv">
+                <i class="cardForm__labelIcon"></i>
+                <div class="cardForm__labelMessage">
+                    <div class="cardForm__labelMessageWrapper">
+                        <span class="cardForm__labelMessageTitle">Как найти CVV / CVC по кредитной карте</span>
+                        <span class="cardForm__labelMessageText">В случае с VISA и Master Card, данный код представляет собой Код Безопасности,
+                            состоящий из трёх цифр, нанесенных на тыльной стороне карты.</span>
+                    </div>
+                </div>
+            </label>
+            <button type="submit" class="cardForm__submit" disabled="true"><span>Пополнить на 100 MDL</span></button>
+        </div>
+    </form>
+    <script src="src/js/common.js"></script>
+</body>
+</html>

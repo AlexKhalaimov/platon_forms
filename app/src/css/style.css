@@ -1,0 +1,283 @@
+@-webkit-keyframes showPopup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showPopup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cardForm {
+  font-family: Arial, sans-serif;
+  line-height: 1.2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 320px;
+  padding: 15px;
+  height: calc(100vh - 90px);
+  -webkit-transition: height .3s ease-in-out;
+  transition: height .3s ease-in-out;
+  margin: 0 auto;
+}
+
+.cardForm * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.cardForm *::before, .cardForm *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.cardForm p {
+  margin: 0;
+  padding: 0;
+}
+
+.cardForm p.cardForm__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.cardForm__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.cardForm__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #E2E2E2;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.cardForm__label_toggler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border: 0;
+}
+
+.cardForm__label_toggler i {
+  position: relative;
+  display: inline-block;
+  margin-right: .5rem;
+  width: 46px;
+  height: 26px;
+  background-color: #e6e6e6;
+  border-radius: 23px;
+  vertical-align: text-bottom;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.cardForm__label_toggler i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 42px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  -webkit-transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+          transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.cardForm__label_toggler i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transform: translate3d(2px, 2px, 0);
+          transform: translate3d(2px, 2px, 0);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.cardForm__label_toggler:active i::after {
+  width: 28px;
+  -webkit-transform: translate3d(2px, 2px, 0);
+          transform: translate3d(2px, 2px, 0);
+}
+
+.cardForm__label_toggler:active input:checked + i::after {
+  -webkit-transform: translate3d(16px, 2px, 0);
+          transform: translate3d(16px, 2px, 0);
+}
+
+.cardForm__label_toggler input {
+  display: none;
+}
+
+.cardForm__label_toggler input:checked + i {
+  background-color: #2D82EB;
+}
+
+.cardForm__label_toggler input:checked + i::before {
+  -webkit-transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+          transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+}
+
+.cardForm__label_toggler input:checked + i::after {
+  -webkit-transform: translate3d(22px, 2px, 0);
+          transform: translate3d(22px, 2px, 0);
+}
+
+.cardForm__labelText {
+  color: #333;
+}
+
+.cardForm__labelText_sm {
+  font-size: 15px;
+  color: rgba(51, 51, 51, 0.6);
+  margin-bottom: 15px;
+}
+
+.cardForm input[type="number"] {
+  outline: 0;
+  border: 0;
+}
+
+.cardForm input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.cardForm__submit {
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  padding: 14px 5px;
+  cursor: pointer;
+  margin-top: auto;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.cardForm__submit[disabled="true"] {
+  background-color: #81B6DC;
+}
+
+.cardForm__submit span {
+  font-size: 15px;
+  color: #fff;
+}
+
+.cardForm__labelIcon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -7px;
+  background-image: url(../img/info.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.cardForm__labelIcon:hover + .cardForm__labelMessage {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-animation: showPopup .5s ease forwards;
+          animation: showPopup .5s ease forwards;
+}
+
+.cardForm__labelMessage {
+  width: 265px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  background-color: #363D47;
+  font-size: 13px;
+  padding: 7px;
+  border-radius: 5px;
+  position: absolute;
+  top: -30px;
+  right: 24px;
+  opacity: 0;
+  -webkit-transition: opcity .3s ease-in-out;
+  transition: opcity .3s ease-in-out;
+}
+
+.cardForm__labelMessage__visible {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  opacity: 1;
+}
+
+.cardForm__labelMessageWrapper {
+  position: relative;
+}
+
+.cardForm__labelMessageWrapper::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: #363D47;
+}
+
+.cardForm__labelMessageTitle {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  word-spacing: -1px;
+  letter-spacing: -.2px;
+}
+
+.cardForm__labelMessageText {
+  display: inline-block;
+}
